@@ -23,3 +23,24 @@ newArr.push("@");
 // console.log(`to merge two array (+) => ${newArr + myArr} `);
 
 // console.log(`to merge two array (concat) => ${newArr.concat(myArr)} `);
+
+// >>>>>>> Create a new array with the sub-array elements concatenated:
+let arrayInsideArray = [1, 2, [3, 4], 5, 6, [7, 8, [9, "intresting"]]];
+// console.log(arrayInsideArray.flat(Infinity));
+
+//==========>>>>>>>>>Spread Opearator<<<<<<<<==============concat using spread op
+// console.log(`concat newArr,myArr(...) ==> ${[...newArr, ...myArr]}`);
+
+// =========>>>>>>>>>TOCovertInArray<<<<<<<<==========
+// 1st string to array
+let string = "JavaScript";
+// console.log(Array.isArray(string));//false
+console.log(`after converting string to array => ${Array.from(string)}`);
+
+// 2nd premitive to array
+let num1 = 25;
+let num2 = 35;
+let num3 = 45;
+console.log(
+  `after converting premitive to array => ${Array.of(num1, num2, num3)}`
+);
