@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM part-3 querySelectors</title>
+  </head>
+  <body>
+    <h1 class="heading temp" id="title" name="heading">DOM - By CKumar</h1>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+    </ul>
+    <input type="text" placeholder="enter your id" />
+    <hr />
+    <input type="password" placeholder="enter your password" />
+  </body>
+  <script>
+    //### in querySelector we does pass argument like css selector for exm: in css tagName,.className,#idName,:childSelector and many more
+
+    //**********************with class**********************
+    const h1 = document.querySelector(".heading");
+    h1Style = h1.style;
+    h1Style.backgroundColor = "blue";
+    h1Style.padding = "1rem";
+    h1Style.borderRadius = ".5rem";
+
+    //**********************with id**********************
+    document.querySelector("#title").style.color = "white";
+
+    //**********************with tag**********************
+    document.querySelector("h1").style.fontSize = "1rem";
+
+    //**********************with Child **********************
+    document.querySelector("li:first-child").style.color = "red";
+    document.querySelector("li:nth-child(2)").style.color = "blue";
+    document.querySelector("li:last-child").style.color = "green";
+
+    //**********************with tag Attributes**********************
+    document.querySelector("input[type=password]").style.border =
+      "5px solid blue";
+  </script>
+</html>

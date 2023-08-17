@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-PART-4</title>
+    <style>
+      h1 {
+        background-color: blue;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM-PART-4</h1>
+
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+    </ul>
+  </body>
+
+  <script>
+    const listItem = document.querySelectorAll("li");
+    listItem.forEach((e) => {
+      let eStyle = e.style;
+      eStyle.color = "blue";
+      eStyle.backgroundColor = "red";
+      eStyle.margin = ".5rem";
+      eStyle.padding = "1rem";
+    });
+
+    // we can also access in this ways
+    listItem[0].style.fontSize = "2rem";
+    listItem[1].style.fontSize = ".8rem";
+    listItem[2].style.fontSize = "1.5rem";
+    listItem[3].style.fontSize = "2.5rem";
+
+    //**** querySelectorAll return NodeList
+    //**********************Convert NodeList to Array**********************
+    const listItemconvertedArray = Array.from(listItem);
+    listItemconvertedArray.map((e) => {
+      console.log(e.innerText);
+    });
+  </script>
+</html>
