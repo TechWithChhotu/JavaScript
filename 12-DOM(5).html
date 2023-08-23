@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Part-5</title>
+    <style>
+      body {
+        background-color: #4f4f4f;
+        color: white;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="week">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Throusday</div>
+    </div>
+  </body>
+  <script>
+    const week = document.querySelector(".week");
+    console.log(week);
+    // console.log(week.children);
+
+    // for (let i = 0; i < week.children.length; i++) {
+    //   console.log(week.children[i].innerText);
+    // }
+
+    // console.log(week.firstElementChild);
+    // console.log(week.lastElementChild);
+    // console.log(week.parentElement);
+
+    const dayOne = document.querySelector(".day");
+    // console.log(dayOne.innerHTML);
+    // console.log(dayOne.nextElementSibling);
+    // console.log(dayOne.previousElementSibling); // because no any previous sibling
+    // console.log(dayOne.parentElement);
+
+    //**********************Very intresting**********************
+    // console.log(week.childNodes);
+    // console.log(week.firstChild);
+    // console.log(week.lastChild);
+    // console.log(week.nextSibling);
+    // console.log(week.previousSibling);
+    // console.log(dayOne.nextSibling);
+    // console.log(dayOne.previousSibling);
+  </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Create Element</title>
+    <style>
+      body {
+        background-color: #4f4f4f;
+        color: white;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const heading = document.createElement("h1");
+    console.log(heading);
+    heading.className = "heading temp";
+    heading.id = "Heading";
+
+    heading.setAttribute("title", "This is main Heading");
+    // heading.setAttribute(("id", "Temp"));
+    // heading.setAttribute("class", "main firstHeading");
+
+    // heading.innerText = "DOM By Ckumar";
+    // ### or use create text node
+    const text = document.createTextNode("DOM | CKumar");
+    heading.appendChild(text);
+
+    heading.style.backgroundColor = "green";
+    heading.style.color = "white";
+
+    document.body.append(heading); // we can also use appendChild
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+  </head>
+  <body>
+    <!-- Digital clock -->
+    <div class="Clock">c</div>
+  </body>
+  <script>
+    // Get the current date and time
+    // from computer system using JavaScript Date object
+    function showTime() {
+      var now = new Date();
+      const x = (document.querySelector(".Clock").innerHTML =
+        now.toLocaleTimeString());
+      console.log(x);
+    }
+    setInterval(() => {
+      showTime();
+    }, 1000);
+  </script>
+</html>

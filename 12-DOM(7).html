@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | part-7</title>
+    <style>
+      body {
+        background-color: #4f4f4f;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="language">
+      <li>C/C++</li>
+    </ul>
+  </body>
+  <script>
+    //**********Append Element**********
+    const language = document.querySelector(".language");
+
+    const addLanguage = (langName) => {
+      // ### first way
+      //   const li = document.createElement("li");
+      //   li.appendChild(document.createTextNode(langName));
+      //   language.appendChild(li);
+
+      ///### second way
+      language.innerHTML += `<li>${langName}</li>`;
+    };
+    addLanguage("Java");
+    addLanguage("JS");
+    addLanguage("Python");
+
+    //**********Edit Element**********
+    const editLanguage = (e, langName) => {
+      // ### first way
+      //   e.textContent = langName;
+
+      //   ### Second way
+      //   e.innerHTML = langName;
+
+      // ### third way
+      //   e.innerText = langName;
+
+      // ### fourth way
+      //   const li = document.createElement("li");
+      //   li.textContent = langName;
+      //   e.replaceWith(li);
+
+      // ### fifth ways
+      e.outerHTML = `<li>${langName}</li>`;
+    };
+
+    let selectedLang = document.querySelector("li:last-child");
+    editLanguage(selectedLang, "Mojo");
+  </script>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI - Body MASS Index</title>
+    <!-- Bootstrap -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(159, 159, 159);
+        padding: 2rem;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .BMIForm {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        text-align: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+      }
+      button {
+        width: 10rem;
+        background-color: #28ae28;
+        margin: auto;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        height: 1.8rem;
+        color: white;
+        margin-top: 1rem;
+      }
+      input {
+        height: 1.5rem;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+      }
+      details {
+        max-width: 400px;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <form class="BMIForm">
+        <div>
+          <label for="height">Height in CM:</label>
+          <input
+            type="text"
+            id="height"
+            placeholder="height"
+            pattern="[0-9]*"
+            required
+            title="babu height numeriacal hi hota h na"
+          />
+        </div>
+
+        <div>
+          <label for="weight">weight in KG: </label>
+          <input
+            type="text"
+            id="weight"
+            placeholder="weight"
+            pattern="[0-9]*"
+            required
+            title="babu weight numeriacal hi hota h na"
+          />
+        </div>
+
+        <button id="submit">Calculate BMI</button><br />
+      </form>
+
+      <div id="result"></div>
+      <details>
+        <summary>About BMI</summary>
+        The Body Mass Index (BMI) is a measure of health based on weight and
+        height. It's used to determine whether someone has a healthy or not.
+      </details>
+
+      <details>
+        <summary>BMI Guide</summary>
+        <ul>
+          <li>Under Weight: less than 18.6 (BMI)</li>
+          <li>Normal: 18.6 to 24.9 (BMI)</li>
+          <li>OverWeight: more than 24.9 but below 30 (BMI)</li>
+          <li>Obesity Class I: More Than 30 But Below 35 (BMI)</li>
+          <li>Obesity Class II: Over 35 But Below 40 (BMI)</li>
+        </ul>
+      </details>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector(".BMIForm");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent form submission
+
+      const height = document.querySelector("#height").value / 100;
+      const weight = document.querySelector("#weight").value / 1;
+      const temp = weight / (height * height);
+      const BMI = temp.toFixed(1);
+      console.log(BMI);
+      let result = document.querySelector("#result");
+      if (BMI < 18.6) {
+        result.innerHTML = `You are Underweight, BMI = ${BMI}`;
+      } else if (BMI >= 18.6 && BMI <= 24.9) {
+        result.innerHTML = `You are Normal, BMI = ${BMI}`;
+      } else if (BMI > 24.9 && BMI < 30) {
+        result.innerHTML = `You are Overweight, BMI = ${BMI}`;
+      } else if (BMI >= 30 && BMI < 35) {
+        result.innerHTML = `You are in Obesity Class I, BMI = ${BMI}`;
+      } else if (BMI >= 35 && BMI < 40) {
+        result.innerHTML = `You are in Obesity Class II, BMI = ${BMI}`;
+      } else {
+        result.innerHTML = `You are in Obesity Class III, BMI = ${BMI}`;
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Switcher</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      .colorContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .colorBox {
+        height: 50px;
+        width: 50px;
+        border-radius: 5px;
+        border: 2px solid #000000;
+        margin: 0.5rem;
+      }
+      .gray {
+        background-color: #808080;
+      }
+      .white {
+        background-color: #fff;
+      }
+      .blue {
+        background-color: #0000ff;
+      }
+      .green {
+        background-color: #008000;
+      }
+      .yellow {
+        background-color: #ffff6f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colorContainer">
+      <div class="colorBox gray"></div>
+      <div class="colorBox white"></div>
+      <div class="colorBox blue"></div>
+      <div class="colorBox green"></div>
+      <div class="colorBox yellow"></div>
+    </div>
+    <h3>
+      try clicking on one of the colors above to change the background color of
+      this page
+    </h3>
+  </body>
+  <script>
+    const colorBox = document.querySelectorAll(".colorBox");
+    colorBox.forEach((e) => {
+      e.addEventListener(
+        "click",
+        () => (document.body.style.backgroundColor = e.classList[1])
+      );
+    });
+  </script>
+</html>
